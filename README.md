@@ -456,3 +456,7 @@ This change allows the consumer to count how many messages are received for each
 3. Go to consumed.sales.csv & confirm changes made
 
 Git add commit push to update Github with run tests
+
+# Update index.md with documentations
+
+Git add commit push to update Github
