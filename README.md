@@ -200,7 +200,7 @@ uvx pre-commit run --all-files
 
 # run the producer
 clear
-uv run python -m streaming.kafka_producer_case
+uv run python -m streaming.kafka_producer_fuemmeler
 
 # do chores
 uv run ruff format .
@@ -224,7 +224,7 @@ Clear the terminal, then start the consumer.
 
 ```shell
 clear
-uv run python -m streaming.kafka_consumer_case
+uv run python -m streaming.kafka_consumer_fuemmeler
 ```
 
 To start fresh, see
@@ -266,7 +266,7 @@ It often figures it out and continues.
 | P02 | ========================
 | P02 | Loading settings from .env...
 | P02 | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
-| P02 | KAFKA_TOPIC                       = streaming-02-kafka-case
+| P02 | KAFKA_TOPIC                       = streaming-02-kafka-fuemmeler
 | P02 | PRODUCER_MESSAGE_COUNT            = 3
 | P02 | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2.0
 | P02 | KAFKA_CLEAR_TOPIC_ON_START        = True
@@ -278,7 +278,7 @@ It often figures it out and continues.
 | P02 | SECTION P. Produce Messages
 | P02 | ========================
 | P02 | Sending messages...
-| P02 | Sending up to 3 message(s) to topic 'streaming-02-kafka-case'.
+| P02 | Sending up to 3 message(s) to topic 'streaming-02-kafka-fuemmeler'.
 | P02 | Watch each sale arrive. Press CTRL+C to stop early.
 
 | P02 | {
@@ -342,7 +342,7 @@ It often figures it out and continues.
 | P02 | SECTION E. Exit
 | P02 | ========================
 | P02 | Summary:
-| P02 | Sent 3 message(s) from topic 'streaming-02-kafka-case'.
+| P02 | Sent 3 message(s) from topic 'streaming-02-kafka-fuemmeler'.
 | P02 | ========================
 | P02 | Producer executed successfully!
 | P02 | ========================
@@ -366,7 +366,7 @@ It often figures it out and continues.
 | C02 | ========================
 | C02 | Loading settings from .env...
 | C02 | KAFKA_BOOTSTRAP_SERVERS  = localhost:9092
-| C02 | KAFKA_TOPIC              = streaming-02-kafka-case
+| C02 | KAFKA_TOPIC              = streaming-02-kafka-fuemmeler
 | C02 | KAFKA_GROUP_ID           = streaming-consumer-group-A
 | C02 | CONSUMER_TIMEOUT_SECONDS = 10.0
 | C02 | CONSUMER_MAX_MESSAGES    = 1000
@@ -380,7 +380,7 @@ It often figures it out and continues.
 | C02 | Topic 'streaming-02-kafka-case' exists.
 | C02 | Found 3 message(s) available.
 | C02 | Creating Kafka consumer...
-| C02 | Subscribed to topic: 'streaming-02-kafka-case' (reading from beginning)
+| C02 | Subscribed to topic: 'streaming-02-kafka-fuemmeler' (reading from beginning)
 | C02 | ========================
 | C02 | SECTION C. Consume and Process Messages
 | C02 | ========================
@@ -409,9 +409,19 @@ It often figures it out and continues.
 | C02 | SECTION E. Exit
 | C02 | ========================
 | C02 | Summary:
-| C02 | Consumed 3 message(s) from topic 'streaming-02-kafka-case'.
+| C02 | Consumed 3 message(s) from topic 'streaming-02-kafka-fuemmeler'.
 | C02 | OUTPUT_CSV = data\output\consumed_sales.csv
 | C02 | ========================
 | C02 | Consumer executed successfully!
 | C02 | ========================
 ```
+
+## Phase 4 Make a Technical Modification
+
+1. Copy consumer_case.py and rename with fuemmeler
+2. Copy producer_case.py and rename with fuemmeler
+3. .env update KAFKA_TOPIC name to fuemmeler
+4. .env update PRODUCER_MESSAGE_COUNT to 5
+5. .env update PRODUCER_MESSAGE_INTERVAL_SECONDS to 4
+
+## Phase 5 Apply the Skills
