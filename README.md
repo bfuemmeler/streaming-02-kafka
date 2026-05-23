@@ -426,7 +426,7 @@ It often figures it out and continues.
 
 Git add commit push to update Github with technical mods in 1-5
 
-Run the files to test:
+# Run the files
 
 1. In the producer terminal, run the producer file:  uv run python -m streaming.kafka_producer_fuemmeler
 2. In the consumer terminal, run the consumer file: uv run python -m streaming.kafka_consumer_fuemmeler
@@ -435,3 +435,24 @@ Run the files to test:
 Git add commit push to update Github with run tests
 
 ## Phase 5 Apply the Skills
+
+1. Make an update to the producer file: change get_message_key from "region_id" to "payment_method"
+2. Update docs/index.md with a Markdown explaining the change:
+
+   # Producer Modification
+
+I modified the Kafka producer by changing the Kafka message key.
+
+Originally, the producer used `region_id` as the message key.
+I changed the key to `payment_type` so messages could be grouped and
+compared by payment method instead of region.
+
+This change allows the consumer to count how many messages are received for each payment type.
+
+# Run the files again
+
+1. In producer terminal, run producer file:  uv run python -m streaming.kafka_producer_fuemmeler
+2. In consumer terminal, run consumer file:  uv run python -m streaming.kafka_consumer_fuemmeler
+3. Go to consumed.sales.csv & confirm changes made
+
+Git add commit push to update Github with run tests
