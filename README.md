@@ -424,4 +424,14 @@ It often figures it out and continues.
 4. .env update PRODUCER_MESSAGE_COUNT to 5
 5. .env update PRODUCER_MESSAGE_INTERVAL_SECONDS to 4
 
+Git add commit push to update Github with technical mods in 1-5
+
+Run the files to test:
+
+1. In the producer terminal, run the producer file:  uv run python -m streaming.kafka_producer_fuemmeler
+2. In the consumer terminal, run the consumer file: uv run python -m streaming.kafka_consumer_fuemmeler
+3. Go to consumed.sales.csv and confirm changes made (5 messages show)
+
+Git add commit push to update Github with run tests
+
 ## Phase 5 Apply the Skills
